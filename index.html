@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shakib Movies</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{padding:16px 5%;background:#151515;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:bold}.logo span{color:#e50914}
+nav a{color:#fff;text-decoration:none;margin-left:16px}
+.hero{padding:55px 5%;text-align:center;background:linear-gradient(135deg,#202020,#050505)}
+.hero h1{font-size:38px;margin:0 0 10px}.hero p{color:#bbb}
+.search{padding:22px 5%;text-align:center}.search input{width:100%;max-width:600px;padding:14px;border:0;border-radius:8px;font-size:16px}
+.ad{margin:18px auto;max-width:900px;min-height:90px;border:1px dashed #555;display:flex;align-items:center;justify-content:center;color:#888}
+section.movies{padding:20px 5%}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
+.card{background:#171717;border-radius:10px;overflow:hidden}.card img{width:100%;height:245px;object-fit:cover}
+.info{padding:13px}.info h3{margin:0 0 8px}.info p{color:#999;font-size:14px}
+.btn{display:inline-block;background:#e50914;color:#fff;text-decoration:none;padding:9px 13px;border-radius:6px;margin-top:5px}
+footer{text-align:center;padding:30px;background:#151515;color:#888;margin-top:35px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Shakib<span>Movies</span></div>
+  <nav><a href="#">Home</a><a href="#movies">Movies</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="hero">
+  <h1>🎬 Shakib Movies</h1>
+  <p>Movies, trailers and downloads you are authorized to distribute.</p>
+</div>
+
+<div class="ad">ADVERTISEMENT</div>
+
+<div class="search">
+  <input id="search" placeholder="মুভির নাম লিখে Search করুন..." oninput="searchMovies()">
+</div>
+
+<section class="movies" id="movies">
+<h2>🎥 Latest Movies</h2>
+<div class="grid">
+
+  <div class="card movie">
+    <img src="https://picsum.photos/400/600?random=11" alt="Movie poster">
+    <div class="info">
+      <h3>Sample Movie 01</h3><p>Action • 2026</p>
+      <a class="btn" href="YOUR-LEGAL-DOWNLOAD-LINK" target="_blank">📥 Download</a>
+    </div>
+  </div>
+
+  <div class="card movie">
+    <img src="https://picsum.photos/400/600?random=12" alt="Movie poster">
+    <div class="info">
+      <h3>Sample Movie 02</h3><p>Drama • 2026</p>
+      <a class="btn" href="YOUR-LEGAL-DOWNLOAD-LINK" target="_blank">📥 Download</a>
+    </div>
+  </div>
+
+  <div class="card movie">
+    <img src="https://picsum.photos/400/600?random=13" alt="Movie poster">
+    <div class="info">
+      <h3>Sample Movie 03</h3><p>Comedy • 2026</p>
+      <a class="btn" href="YOUR-LEGAL-DOWNLOAD-LINK" target="_blank">📥 Download</a>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<div class="ad">ADVERTISEMENT</div>
+
+<footer id="contact">© 2026 Shakib Movies</footer>
+
+<script>
+function searchMovies(){
+  const q=document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll(".movie").forEach(card=>{
+    card.style.display=card.querySelector("h3").innerText.toLowerCase().includes(q)?"":"none";
+  });
+}
+</script>
+</body>
+</html>
